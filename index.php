@@ -12,13 +12,16 @@
     <?php include('header.php'); ?>  
     <main>
         <div id="liste-oeuvres">
+        <?php include('oeuvres.php'); ?>
+        <?php foreach($oeuvres as $oeuvre): ?>
             <article class="oeuvre">
-                <a href="oeuvre-1.html">
-                    <img src="img/clark-van-der-beken.png" alt="Dodomu">
-                    <h2>Dodomu</h2>
-                    <p class="description">Mia Tozerski</p>
+                <a href="oeuvre.php">
+                    <img src=<?php echo $oeuvre['img']; ?> alt=<?php echo $oeuvre['title']; ?>>
+                    <h2><?php echo $oeuvre['title']; ?></h2>
+                    <p class="description"><?php echo $oeuvre['author']; ?></p>
                 </a>
             </article>
+        <?php endforeach ?>
         </div>
     </main>
     <?php include('footer.php'); ?>
