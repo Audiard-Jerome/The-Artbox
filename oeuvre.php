@@ -11,18 +11,23 @@
 <body>
     <?php include('header.php'); ?>
 <main>
-    <article id="detail-oeuvre">
-        <div id="img-oeuvre">
-            <img src="img/clark-van-der-beken.png" alt="Dodomu">
-        </div>
-        <div id="contenu-oeuvre">
-            <h1>Dodomu</h1>
-            <p class="description">Mia Tozerski</p>
-            <p class="description-complete">
-                Mia Tozerski est une artiste peintre ukrainienne réfugiée de la guerre. Sur cette œuvre, Dodomu ("domicile" en ukrainien), elle nous montre la tristesse du peuple ukrainien qu'elle partage, ayant elle-même dû quitter son foyer. L'œuvre évoque le drapeau liquéfié d'une Ukraine en souffrance, pleurant la mort de ses compatriotes. Ce travail chargé d'émotion est le symbole d'un événement qui marquera l'Histoire. Cette peinture à l'acrylique rayonne grâce à son fond lisse et ses mélanges de couleurs éclatantes.
-            </p>
-        </div>
-    </article>
+    <?php include('oeuvres.php'); ?>
+    <?php foreach($oeuvres as $oeuvre): ?>
+        <?php if($oeuvre['id'] == $_GET['id']): ?> 
+            <article id="detail-oeuvre">
+                <div id="img-oeuvre">
+                    <img src=<?php echo $oeuvre['img']; ?> alt=<?php echo $oeuvre['title']; ?>>
+                </div>
+                <div id="contenu-oeuvre">
+                    <h1><?php echo $oeuvre['title']; ?></h1>
+                    <p class="description"><?php echo $oeuvre['author']; ?></p>
+                    <p class="description-complete">
+                    <?php echo $oeuvre['desc']; ?>
+                    </p>
+                </div>
+            </article>
+        <?php endif ?>
+    <?php endforeach ?>    
 </main>
     <?php include('footer.php'); ?>
 </body>
