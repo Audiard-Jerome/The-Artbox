@@ -54,8 +54,8 @@ $oeuvres = [
         'id' => 8,
         'title' => 'Blast from the past',
         'img' => 'img/steve-johnson-6.png',
-        'author' => 'Auteur',
-        'desc' => 'Description',
+        'author' => 'Juliette Baskerville',
+        'desc' => 'Nunc fermentum purus dapibus justo fermentum auctor. Maecenas non tincidunt leo. Morbi vitae iaculis sem. Donec quis scelerisque massa. Fusce quis accumsan diam, et interdum lectus. Suspendisse mattis pulvinar vehicula. Duis nisi.',
     ],
     [
         'id' => 9,
